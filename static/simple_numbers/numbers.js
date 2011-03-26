@@ -13,14 +13,15 @@ function get_places(div,gridx,gridy) {
   var x,y;
   
   var w=div.width();
-  var h=div.width();
+  var h=div.height();
   var p=div.offset(); // or position() ?
+
   var sx=p.left;
   var sy=p.top;
   for(x=0;x<gridx;x++) {
     for(y=0;y<gridy;y++) {
-      var px=x*w/(gridx+1)+sx;
-      var py=y*h/(gridy+1)+sy;
+      var px=x*w/(gridx)+sx;
+      var py=y*h/(gridy)+sy;
       a[a.length]="left:"+px+"px;top:"+py+"px;";
     }
   }
