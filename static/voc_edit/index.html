@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language='javascript' src='jquery-1.4.2.js'></script>
+<script language='javascript' src='edit.js'></script>
+
+<link rel="stylesheet" type="text/css" href="edit.css">
+</head>
+<body>
+
+
+<form name='voc_form' method='post'>
+  <input type='hidden' name='lesson' value='[["table","Tisch"],["door","Tür"]]' id="voc_form_content">
+</form>
+
+<form>
+<table id="vocabularies">
+  <tr id="vocabularies_head">
+  <td></td>
+  <td></td>
+  <td>
+    <input type='text' id='voc_0' />
+  </td>
+  <td>
+    <input type='text' id='voc_1' />
+  </td>
+  <td>
+    <input type='text' id='voc_2' />
+  </td>
+  <td>
+  <input type='submit' value='add' onclick='javascript: return add_voc();'/>
+  </td>
+  <td>
+  <input type='submit' value='save all' onclick='javascript: return save_vocs();'/>
+  <input type='submit' value='load' onclick='javascript: return load_vocs();'/>
+  </td>
+  </tr>
+</table>
+</form>
+<script language='javascript'>
+$(document).ready(function() {load_vocs()});
+</script>
+</body>
+</html>

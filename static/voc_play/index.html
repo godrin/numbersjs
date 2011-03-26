@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language='javascript' src='jquery-1.4.2.js'></script>
+<script language='javascript' src='../game.js'></script>
+<script language='javascript' src='play.js'></script>
+
+<link rel="stylesheet" type="text/css" href="play.css">
+
+<script language='javascript'>
+  var vocs=[
+   ["Stuhl","chair"],
+   ["Tisch","table"],
+   ["sitzen","sit"],
+   ["Spiel","game"],
+   ["Drucker","printer"]
+  ];
+
+
+  $(document).ready(function() {init_game(vocs);start_play()});
+</script>
+
+</head>
+<body>
+<form name='voc_form' method='post'>
+  <input type='hidden' name='lesson' value='[["table","Tisch"],["door","Tür"]]' id="voc_form_content">
+</form>
+
+
+Question:
+<div id='question'>
+question
+</div>
+
+<div id='answer'>
+</div>
+<div id='correct'>
+<img src="correct.png"></img>CORRECT
+</div>
+<div id='incorrect'>
+<img src="incorrect.png"></img>INCORRECT
+</div>
+
+</body>
+</html>

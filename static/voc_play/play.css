@@ -1,0 +1,9 @@
+
+#correct, #incorrect {
+  position:absolute;
+  top:150px;
+  width:300px;
+  height:200px;
+  background-color:#BBF;
+  left:40%;
+}
