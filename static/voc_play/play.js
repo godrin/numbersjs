@@ -12,14 +12,27 @@ function init_game(vocs) {
     levels[levels.length]=[];
   $("#correct").hide();
   $("#incorrect").hide();
-    
+  init_answer_box();
+}
+
+function init_answer_box() {
+  $("#answer").empty();
   $("#answer").append("<form onsubmit='return false;'><input type='text' id='inputanswer'</input><input type='submit' id='answersubmit'></form>");
   $("#answersubmit").click(function(){answered()});
 }
 
+function show_answer_in_answer_box(correct) {
+  $("#answer").empty().append(correct);
+}
+
 function answered() {
   var answer=$("#inputanswer").val();
-  showResult(answer==currentQuestion[1]);
+  $("#inputanswer").attr('disabled',true);
+  result=(answer==currentQuestion[1]);
+  showResult(result);
+  if(!result) {
+    show_answer_in_answer_box("Correct is: "+currentQuestion[1]);
+  }
   return false;
 }
 
@@ -48,7 +61,12 @@ function setQuestion(q) {
   $("#question").empty().append(q[0]);
 }
 
-function start_play() {
-  alert("start");
+function start_game() {
   setQuestion(chooseQuestion());
+  init_answer_box();
+  
+  inp=$("#inputanswer");
+  inp.val("");
+  inp.removeAttr("disabled");
+  inp.focus();
 }
